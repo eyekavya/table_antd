@@ -13,6 +13,7 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [editingTodo, setEditingTodo] = useState(null);
   const [data, setData] = useState([]);
+
   const columns = [
     {
       title: "UserID",
@@ -185,6 +186,8 @@ function App() {
       title: "Completed",
       dataIndex: "completed",
       key: "completed",
+      render: (completed) => String(completed),
+
       filterDropdown: ({
         setSelectedKeys,
         selectedKeys,
@@ -258,16 +261,16 @@ function App() {
     },
   ];
 
-  const onAddStudent = () => {
+  const onAddTodo = () => {
     const randomNumber = parseInt(Math.random() * 1000);
-    const newStudent = {
+    const newTodo = {
+      userId: randomNumber,
       id: randomNumber,
-      name: "Name " + randomNumber,
-      email: randomNumber + "@gmail.com",
-      address: "Address " + randomNumber,
+      title: "Dummy Task" + randomNumber,
+      completed: "false",
     };
     setData((pre) => {
-      return [...pre, newStudent];
+      return [...pre, newTodo];
     });
   };
 
@@ -304,17 +307,17 @@ function App() {
     fetchData();
   }, []);
 
-  // console.log(data);
+  console.log(data);
 
   return (
     <div className="App">
       <div>
         <Button
-          onClick={onAddStudent}
+          onClick={onAddTodo}
           type="primary"
           style={{
             display: "block",
-            margin: 16,
+            margin: "16px",
           }}
         >
           Add a Task
