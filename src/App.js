@@ -20,112 +20,110 @@ function App() {
       dataIndex: "userId",
       key: "userId",
       sorter: (a, b) => a.userId - b.userId,
-      filterDropdown: ({
-        setSelectedKeys,
-        selectedKeys,
-        confirm,
-        clearFilters,
-      }) => {
-        return (
-          <>
-            <Input
-              autoFocus
-              placeholder="Type text here"
-              value={selectedKeys[0]}
-              onChange={(e) => {
-                setSelectedKeys(e.target.value ? [e.target.value] : []);
-                confirm({ closeDropdown: false });
-              }}
-              onPressEnter={() => {
-                confirm();
-              }}
-              onBlur={() => {
-                confirm();
-              }}
-            ></Input>
-            <Button
-              onClick={() => {
-                confirm();
-              }}
-              type="primary"
-            >
-              Search
-            </Button>
-            <Button
-              onClick={() => {
-                clearFilters();
-              }}
-              type="danger"
-            >
-              Reset
-            </Button>
-          </>
-        );
-      },
-      filterIcon: () => {
-        return (
-          <AiOutlineSearch style={{ color: "#868B8E", fontSize: "18px" }} />
-        );
-      },
-      onFilter: (value, record) => {
-        return record.userId === value;
-      },
+      //   filterDropdown: ({
+      //     setSelectedKeys,
+      //     selectedKeys,
+      //     confirm,
+      //     clearFilters,
+      //   }) => {
+      //     return (
+      //       <>
+      //         <Input
+      //           placeholder="Type text here"
+      //           value={selectedKeys[0]}
+      //           onChange={(e) => {
+      //             setSelectedKeys(e.target.value ? [e.target.value] : []);
+      //             confirm({ closeDropdown: false });
+      //           }}
+      //           onPressEnter={() => {
+      //             confirm();
+      //           }}
+      //           onBlur={() => {
+      //             confirm();
+      //           }}
+      //         ></Input>
+      //         <Button
+      //           onClick={() => {
+      //             confirm();
+      //           }}
+      //           type="primary"
+      //         >
+      //           Search
+      //         </Button>
+      //         <Button
+      //           onClick={() => {
+      //             clearFilters();
+      //           }}
+      //           type="danger"
+      //         >
+      //           Reset
+      //         </Button>
+      //       </>
+      //     );
+      //   },
+      //   filterIcon: () => {
+      //     return (
+      //       <AiOutlineSearch style={{ color: "#868B8E", fontSize: "18px" }} />
+      //     );
+      //   },
+      //   onFilter: (value, record) => {
+      //     return record.userId === value;
+      //   },
     },
     {
       title: "ID",
       dataIndex: "id",
       key: "id",
       sorter: (a, b) => a.id - b.id,
-      filterDropdown: ({
-        setSelectedKeys,
-        selectedKeys,
-        confirm,
-        clearFilters,
-      }) => {
-        return (
-          <>
-            <Input
-              autoFocus
-              placeholder="Type text here"
-              value={selectedKeys[0]}
-              onChange={(e) => {
-                setSelectedKeys(e.target.value ? [e.target.value] : []);
-                confirm({ closeDropdown: false });
-              }}
-              onPressEnter={() => {
-                confirm();
-              }}
-              onBlur={() => {
-                confirm();
-              }}
-            ></Input>
-            <Button
-              onClick={() => {
-                confirm();
-              }}
-              type="primary"
-            >
-              Search
-            </Button>
-            <Button
-              onClick={() => {
-                clearFilters();
-              }}
-              type="danger"
-            >
-              Reset
-            </Button>
-          </>
-        );
-      },
-      filterIcon: () => {
-        return (
-          <AiOutlineSearch style={{ color: "#868B8E", fontSize: "18px" }} />
-        );
-      },
-      onFilter: (value, record) => {
-        return record.id === value;
-      },
+      // filterDropdown: ({
+      //   setSelectedKeys,
+      //   selectedKeys,
+      //   confirm,
+      //   clearFilters,
+      // }) => {
+      //   return (
+      //     <>
+      //       <Input
+      //         placeholder="Type text here"
+      //         value={selectedKeys[0]}
+      //         onChange={(e) => {
+      //           setSelectedKeys(e.target.value ? [e.target.value] : []);
+      //           confirm({ closeDropdown: false });
+      //         }}
+      //         onPressEnter={() => {
+      //           confirm();
+      //         }}
+      //         onBlur={() => {
+      //           confirm();
+      //         }}
+      //       ></Input>
+      //       <Button
+      //         onClick={() => {
+      //           confirm();
+      //         }}
+      //         type="primary"
+      //       >
+      //         Search
+      //       </Button>
+      //       <Button
+      //         onClick={() => {
+      //           clearFilters();
+      //         }}
+      //         type="danger"
+      //       >
+      //         Reset
+      //       </Button>
+      //     </>
+      //   );
+      // },
+      // filterIcon: () => {
+      //   return (
+      //     <AiOutlineSearch style={{ color: "#868B8E", fontSize: "18px" }} />
+      //   );
+      // },
+      // onFilter: (value, record) => {
+      //   return record.id === value;
+      // },
     },
     {
       title: "Title",
@@ -140,8 +138,7 @@ function App() {
         return (
           <>
             <Input
-              autoFocus
-              placeholder="Type text here"
+              placeholder="Type here to search"
               value={selectedKeys[0]}
               onChange={(e) => {
                 setSelectedKeys(e.target.value ? [e.target.value] : []);
@@ -188,56 +185,55 @@ function App() {
       key: "completed",
       render: (completed) => String(completed),
 
-      filterDropdown: ({
-        setSelectedKeys,
-        selectedKeys,
-        confirm,
-        clearFilters,
-      }) => {
-        return (
-          <>
-            <Input
-              autoFocus
-              placeholder="Type text here"
-              value={selectedKeys[0]}
-              onChange={(e) => {
-                setSelectedKeys(e.target.value ? [e.target.value] : []);
-                confirm({ closeDropdown: false });
-              }}
-              onPressEnter={() => {
-                confirm();
-              }}
-              onBlur={() => {
-                confirm();
-              }}
-            ></Input>
-            <Button
-              onClick={() => {
-                confirm();
-              }}
-              type="primary"
-            >
-              Search
-            </Button>
-            <Button
-              onClick={() => {
-                clearFilters();
-              }}
-              type="danger"
-            >
-              Reset
-            </Button>
-          </>
-        );
-      },
-      filterIcon: () => {
-        return (
-          <AiOutlineSearch style={{ color: "#868B8E", fontSize: "18px" }} />
-        );
-      },
-      onFilter: (value, record) => {
-        return record.completed.toLowerCase().includes(value.toLowerCase());
-      },
+      // filterDropdown: ({
+      //   setSelectedKeys,
+      //   selectedKeys,
+      //   confirm,
+      //   clearFilters,
+      // }) => {
+      //   return (
+      //     <>
+      //       <Input
+      //         placeholder="Type text here"
+      //         value={selectedKeys[0]}
+      //         onChange={(e) => {
+      //           setSelectedKeys(e.target.value ? [e.target.value] : []);
+      //           confirm({ closeDropdown: false });
+      //         }}
+      //         onPressEnter={() => {
+      //           confirm();
+      //         }}
+      //         onBlur={() => {
+      //           confirm();
+      //         }}
+      //       ></Input>
+      //       <Button
+      //         onClick={() => {
+      //           confirm();
+      //         }}
+      //         type="primary"
+      //       >
+      //         Search
+      //       </Button>
+      //       <Button
+      //         onClick={() => {
+      //           clearFilters();
+      //         }}
+      //         type="danger"
+      //       >
+      //         Reset
+      //       </Button>
+      //     </>
+      //   );
+      // },
+      // filterIcon: () => {
+      //   return (
+      //     <AiOutlineSearch style={{ color: "#868B8E", fontSize: "18px" }} />
+      //   );
+      // },
+      // onFilter: (value, record) => {
+      //   return record.completed.toLowerCase().includes(value.toLowerCase());
+      // },
     },
     {
       title: "Action",
