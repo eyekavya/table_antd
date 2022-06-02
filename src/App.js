@@ -258,15 +258,15 @@ function App() {
   ];
 
   const onAddTodo = () => {
-    const randomNumber = parseInt(Math.random() * 1000);
     const newTodo = {
-      userId: randomNumber,
-      id: randomNumber,
-      title: "Dummy Task" + randomNumber,
+      userId: "Enter",
+      id: data.length + 1,
+      title: "Enter task",
       completed: "false",
+      idEditable: "true",
     };
     setData((pre) => {
-      return [...pre, newTodo];
+      return [newTodo, ...pre];
     });
   };
 
@@ -303,7 +303,7 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="App">
@@ -344,27 +344,40 @@ function App() {
             resetEditing();
           }}
         >
-          {/* <Input
-            value={editingTodo?.userId}
-            onChange={(e) => {
-              setEditingTodo((pre) => {
-                return { ...pre, userId: e.target.value };
-              });
-            }}
-          />
-          <Input
-            value={editingTodo?.id}
-            onChange={(e) => {
-              setEditingTodo((pre) => {
-                return { ...pre, id: e.target.value };
-              });
-            }}
-          /> */}
+          {editingTodo?.idEditable && (
+            <>
+              <Input
+                value={editingTodo?.userId}
+                onChange={(e) => {
+                  setEditingTodo((pre) => {
+                    return { ...pre, userId: e.target.value };
+                  });
+                }}
+              />
+              {/* <Input
+                value={editingTodo?.id}
+                onChange={(e) => {
+                  setEditingTodo((pre) => {
+                    return { ...pre, id: e.target.value };
+                  });
+                }}
+              /> */}
+            </>
+          )}
+
           <Input
             value={editingTodo?.title}
             onChange={(e) => {
               setEditingTodo((pre) => {
                 return { ...pre, title: e.target.value };
+              });
+            }}
+          />
+          <Input
+            value={editingTodo?.completed}
+            onChange={(e) => {
+              setEditingTodo((pre) => {
+                return { ...pre, completed: e.target.value };
               });
             }}
           />
